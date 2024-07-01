@@ -1,0 +1,40 @@
+{{ template "base" . }}
+
+{{ define "content" }}
+<section class="py-20">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-8">Libros Destacados</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Ejemplo de libro 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img src="https://pictures.abebooks.com/isbn/9789987083794-us.jpg" alt="Libro 1" class="w-full h-64 object-cover mb-4 rounded-lg">
+        <h3 class="text-2xl font-bold mb-2">Mmeza Fupa</h3>
+        <p class="text-gray-700 mb-4">Hilal, Ali</p>
+        <a href="#" class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Leer Más</a>
+      </div>
+      <!-- Ejemplo de libro 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img src="https://pictures.abebooks.com/isbn/9789987753932-us.jpg" alt="Libro 2" class="w-full h-64 object-cover mb-4 rounded-lg">
+        <h3 class="text-2xl font-bold mb-2">
+          Mungu Hakopeshwi</h3>
+        <p class="text-gray-700 mb-4">Baharoon, Zainab Alwi</p>
+        <a href="#" class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Leer Más</a>
+      </div>
+      <!-- Ejemplo de libro 3 -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img src="https://pictures.abebooks.com/isbn/9789976102451-us.jpg" alt="Libro 3" class="w-full h-64 object-cover mb-4 rounded-lg">
+        <h3 class="text-2xl font-bold mb-2">Mirathi ya Hatari</h3>
+        <p class="text-gray-700 mb-4">Mung'ong'o, C. G.</p>
+        <a href="#" class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Leer Más</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-20 bg-gray-100">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-4">Sobre Nosotros</h2>
+    <p class="text-gray-700">Somos un equipo dedicado de desarrolladores y entusiastas de los libros que se esfuerzan por traerte la mejor colección de libros y recursos para alimentar tu pasión por la lectura y el aprendizaje.</p>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,55 @@
+{{ template "base" . }}
+
+{{ define "content" }}
+<form action="/author/new" method="POST">
+    <div class="space-y-12">
+      <div class="border-b border-gray-900/10 pb-12">
+        <h2 class="text-base font-semibold leading-7 text-gray-900">Informacion del Autor</h2>
+        <p class="mt-1 text-sm leading-6 text-gray-600">Coloca los nombres y detalles del Autor</p>
+  
+        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div class="sm:col-span-3">
+            <label for="fullname" class="block text-sm font-medium leading-6 text-gray-900">Nombres Completos (*)</label>
+            <div class="mt-2">
+              <input type="text" name="fullname" id="fullname" autocomplete="Erick Clapton" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Vinicio Jr.">
+            </div>
+          </div>
+  
+          <div class="sm:col-span-3">
+            <label for="bio" class="block text-sm font-medium leading-6 text-gray-900">Biografia</label>
+            <div class="mt-2">
+              <textarea id="bio" name="bio" rows="3" autocomplete="Persona con buen gusto a los libros" class="block w-full max-w-2xl rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+              <p class="mt-3 text-sm leading-6 text-gray-600" placeholder="Ejemplo: Persona con buen gusto por los libros de calidad">Escribe lo que lo identifica como escritor de libros.</p>
+            </div>
+          </div>
+  
+
+          <div class="sm:col-span-2">
+            <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Telefono</label>
+            <div class="mt-2">
+              <input type="text" name="phone" id="phone" autocomplete="0978129453" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Ejemplo: 0978129453">
+            </div>
+          </div>
+  
+          <div class="sm:col-span-2">
+            <label for="birth-year" class="block text-sm font-medium leading-6 text-gray-900">Año de nacimiento</label>
+            <div class="mt-2">
+                <input type="date" min="1994-01-01" max="2024-12-31" name="birth-year" id="birth-year" min="1900" max="2024" autocomplete="2024-12-12" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="12-12-2024">
+            </div>
+        </div>
+  
+          <div class="sm:col-span-2">
+            <label for="nationality" class="block text-sm font-medium leading-6 text-gray-900">Nacionalidad</label>
+            <div class="mt-2">
+              <input type="text" name="nationality" id="nationality" autocomplete="Ecuador" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Ecuatoriano">
+            </div>
+          </div>
+  
+         </div>
+      </div>
+    </div>
+    <div class="mt-6 flex items-center justify-end gap-x-6">
+      <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Crear</button>
+    </div>
+</form>
+{{ end }}

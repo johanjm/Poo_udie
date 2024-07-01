@@ -1,0 +1,27 @@
+{{ template "base" . }}
+
+{{ define "content" }}
+<div class="h-full flex items-center justify-center bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center">Registro</h2>
+        <form action="/signup" method="POST">
+            <div class="mb-4">
+                <label for="fullname" class="block text-gray-700">Nombre Completo</label>
+                <input type="text" id="fullname" name="fullname" class="w-full p-2 border border-gray-300 rounded mt-1" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded mt-1" required>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700">Contraseña</label>
+                <input type="password" id="password" name="password" class="w-full p-2 border border-gray-300 rounded mt-1" required>
+            </div>
+            <div class="mb-4">
+                <button type="submit" class="w-full bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700">Registrarse</button>
+            </div>
+            <p class="text-center text-gray-700">¿Ya tienes una cuenta? <a href="/login" class="text-blue-500 hover:underline">Inicia Sesión</a></p>
+        </form>
+    </div>
+</div>
+{{ end }}

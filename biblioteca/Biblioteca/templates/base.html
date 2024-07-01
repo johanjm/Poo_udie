@@ -1,0 +1,67 @@
+{{ define "base" }}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de gestión</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-full flex flex-col justify-between items-between">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="hover:underline">
+                <h1 class="text-2xl font-bold">Sistema de Gestión de Biblioteca</h1>
+            </a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="/login" class="hover:underline">Ingresar</a></li>
+                    <li><a href="/authors" class="hover:underline">Autores</a></li>
+                    <li><a href="/books" class="hover:underline">Libros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-8 relative">
+        {{ template "content" . }}
+
+        <!-- Mostrar popover si hay un error -->
+        {{ if .Message }}
+        <div class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded shadow-lg z-50 animate-slideIn">
+            <div class="flex justify-between items-center">
+                <span>{{ .Message }}</span>
+                <button type="button" class="bg-black text-white hover:text-white focus:outline-none px-2 py-1 ml-2 rounded" onclick="this.parentNode.parentNode.removeChild(this.parentNode)">×</button>
+            </div>
+        </div>
+        {{ end }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <div class="text-center p-3 bg-opacity-25" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Copyright:
+                <a class="text-white font-bold" href="#">erickfy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animación de entrada slideIn -->
+    <style>
+        @keyframes slideIn {
+            0% { transform: translate(1/2, -100%); opacity: 0; top: 20;}
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(1/2, -100%); opacity: 0; top: 20;}
+        }
+
+        .animate-slideIn {
+            animation: slideIn ease-out 3s forwards;
+        }
+    </style>
+</body>
+</html>
+{{ end }}
